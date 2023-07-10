@@ -20,10 +20,10 @@
          <th scope="col">ISBN</th>
          <th scope="col">Price</th>
          <th scope="col">Available</th>
-         <th scope="col">Action</th>
+         <th scope="col" class="text-end">Action</th>
        </tr>
      </thead>
-     <tbody>
+     <tbody class='text-center'>
         @foreach($books as $book)
        <tr>
          <th scope="row">{{$book->id}}</th>
@@ -32,8 +32,8 @@
          <td>{{$book->isbn}}</td>
          <td>{{$book->price}}</td>
          <td>{{$book->available}}</td>
-         <td class="d-flex">
-            <div class="d-flex gap-3">
+         <td class="text-end">
+            <div class="">
                 <a href="{{route('books.show',$book->id)}}" class="btn btn-secondary">View</a>
                 <a href="{{route('books.edit',$book->id)}}" class="btn btn-primary">Edit</a>
                 <form action = "{{route('books.destroy',$book->id)}}" method="post">
@@ -49,7 +49,10 @@
    </table>
 </div>
 
-{{ $books->links() }}
+<div class="mx-auto col-3">
+        {{ $books->links() }}
+</div>
+
 
 
 @endsection

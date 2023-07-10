@@ -6,7 +6,7 @@
 @section('content')
 
     <div class='container'>
-    <form action="{{route('books.update')}}" method="POST">
+    <form action="{{route('books.update',$book->id)}}" method="POST">
     @csrf
     @method('PATCH')
     <div class="form-group mt-3">

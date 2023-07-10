@@ -34,8 +34,8 @@
          <td>{{$book->available}}</td>
          <td>
             <div class="mx-auto">
-                <a href="#" class="btn btn-secondary">View</a>
-                <a href="#" class="btn btn-primary">Edit</a>
+                <a href="{{route('book.show',$book->id)}}" class="btn btn-secondary">View</a>
+                <a href="{{route('book.edit',$book->id)}}" class="btn btn-primary">Edit</a>
                 <button type="button" class="btn btn-danger">Danger</button>
 </div>
          </td>

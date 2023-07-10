@@ -50,7 +50,8 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        //
+        print_r($book->title);
+        return view('show',compact('book'));
     }
 
     /**
@@ -58,7 +59,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return view('edit',compact('book'));
     }
 
     /**
@@ -66,7 +67,16 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+        //dd($request);
+        $book->update([
+            'title'     => $request->input('title'),
+            'author'    => $request->input('author'),
+            'isbn'      => $request->input('isbn'),
+            'price'     => $request->input('price'),
+            'available' => $request->input('available'),
+        ]);
+
+        return redirect()->route('books.index');
     }
 
     /**

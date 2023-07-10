@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="card" style="width: 50rem;">
+<div class="card col-md-3 mx-auto">
   <div class="card-body">
     <h1 class="card-title text-center">Book Information</h1>
     <div class="card">

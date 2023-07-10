@@ -33,8 +33,16 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
+        $books = Book::create([
+            'title'=> $request->input('title'),
+            'author'=> $request->input('author'),
+            'isbn'=> $request->input('isbn'),
+            'price' => $request->input('price'),
+            'available' => $request->input('available'),
+        ]);
+
+        return redirect()->route('books.index');
         
-        return view('check',compact('request'));
     }
 
     /**
